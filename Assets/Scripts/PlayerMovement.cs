@@ -9,10 +9,12 @@ public class PlayerMovement : MonoBehaviour
 
     public float playerspeed;
 
+    TileManager tlmobject;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        tlmobject = FindObjectOfType<TileManager>();
     }
 
     // Update is called once per frame
@@ -30,5 +32,13 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         transform.Translate(Direction * playerspeed * Time.deltaTime);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "FirstTile")
+        {
+            tlmobject.playertouch = true;
+        }
     }
 }
