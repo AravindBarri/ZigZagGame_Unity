@@ -34,11 +34,11 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate(Direction * playerspeed * Time.deltaTime);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    /*private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "FirstTile")
         {
             tlmobject.playertouch = true;
         }
-    }
+    }*/
 }
