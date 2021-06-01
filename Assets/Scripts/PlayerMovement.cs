@@ -41,4 +41,11 @@ public class PlayerMovement : MonoBehaviour
             tlmobject.playertouch = true;
         }
     }*/
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Pickup")
+        {
+            other.gameObject.SetActive(false);
+        }
+    }
 }
