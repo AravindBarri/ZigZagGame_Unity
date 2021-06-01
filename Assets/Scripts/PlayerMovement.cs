@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
 
     TileManager tlmobject;
 
+    public ParticleSystem particleprefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.tag == "Pickup")
         {
             other.gameObject.SetActive(false);
+            Instantiate(particleprefab, transform.position, Quaternion.identity);
         }
     }
 }

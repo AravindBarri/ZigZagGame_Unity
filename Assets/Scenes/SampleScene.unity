@@ -646,6 +646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Direction: {x: 0, y: 0, z: 0}
   playerspeed: 2
+  particleprefab: {fileID: 4660784126232832681, guid: cecaa789f946a3946b5ffb585f6e726f, type: 3}
 --- !u!54 &1564871624
 Rigidbody:
   m_ObjectHideFlags: 0
