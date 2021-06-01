@@ -13,10 +13,13 @@ public class PlayerMovement : MonoBehaviour
 
     public ParticleSystem particleprefab;
 
+    ScoreManagerScript ScObject;
+
     // Start is called before the first frame update
     void Start()
     {
         tlmobject = FindObjectOfType<TileManager>();
+        ScObject = FindObjectOfType<ScoreManagerScript>();
     }
 
     // Update is called once per frame
@@ -49,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             Instantiate(particleprefab, transform.position, Quaternion.identity);
+            ScObject.scorebool = true;
         }
     }
 }
