@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
 
     ScoreManagerScript ScObject;
 
+    public GameObject GameoverCanva;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,13 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         transform.Translate(Direction * playerspeed * Time.deltaTime);
+
+        if(transform.position.y < -10)
+        {
+            this.GetComponent<Rigidbody>().isKinematic = true;
+            playerspeed = 0f;
+            GameoverCanva.SetActive(true);
+        }
     }
 
     /*private void OnCollisionEnter(Collision collision)
